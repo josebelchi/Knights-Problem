@@ -1,0 +1,51 @@
+# Ignore Python bytecode
+__pycache__/
+*.py[cod]
+
+# Ignore virtual environment
+virtualEnv/
+
+# Ignore temporary files and system files
+*.log
+*.bak
+*.swp
+.DS_Store
+Thumbs.db
+
+# Ignore test and result files
+*.csv
+*.json
+*.db
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Ignore temporary directories created by IDEs or editors
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Ignore cache files from numpy/pandas
+*.npy
+*.npz
+
+# Ignore timing result files if applicable
+*.out
+
+# Ignore results from running the program
+results/
+output/
+data/
+
+# Ignore environment files
+environment.yml
+
+# Ignore compiled files (optional, if using Cython or other compiled Python)
+*.so
+*.pyd
+*.dll
+*.dylib
+
+# Ignore other temporary files
+*.tmp
