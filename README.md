@@ -1,25 +1,25 @@
 # *The Knights Problem using Branch & Bound and A\**
 
-Disclaimer: This code is a college group practical assignment that has been addapted to apply and practice some python proyect structures and
-knowledges, and also with the aim of optimizing its functionality.
+Disclaimer: This code is a college group practical assignment that has been adapted to apply and practice some python knowledge, and also 
+with the aim of optimizing its functionality.
 
 ## The problem
 
 The aim is to solve a variant of the chess queens problem, using knights instead, to find out how many knights can be present on a chessboard 
 without threatening each other. Any configuration of knights on the board is valid as long as they do not threaten each other, but you want 
-to find the maximum number of knights. Below are several examples on a 3x3 chessboard:
+to find the maximum number of knights. Right below there are some examples on a 3x3 chessboard:
 ```
 Optimal and Valid   Valid   Not valid
 K·K                 K·K     K··
 ·K·                 ···     ··K
 K·K                 K··     ·K·
 ```
-The aim of the algorithm is to find a valid configuration with as many horses as possible. In this solve it always tries to find the maximum
+The aim of the algorithm is to find a valid configuration with as many knights as possible. In this solution it always tries to find the maximum
 amount of knights possible.
 
 It is possible that the problem configuration is too large for some of the algorithms. As a rule of thumb, if the algorithm takes more than 5 
 minutes to complete its execution, we can declare that the algorithm has not found a solution in a reasonable time (and we indicate this in 
-the analysis of results).
+the analysis of the results).
 
 * Various configurations are provided:
     * A **2x2** board,
@@ -33,11 +33,11 @@ the analysis of results).
 
 * The use of external libraries is not allowed except for numpy and pandas.
 
-## Admisibility of the heuristic
+## Admissibility of the heuristic
 
-We have several heuristics, each of them trying a different aproach.
+We have several heuristics, each of them trying a different approach.
 
-* First = 3*(max_knights - knights_on_board)
+* First = 3 * (max_knights - knights_on_board)
 
 * Second = 2 * safe_squares - attacked_squares
 
@@ -45,36 +45,36 @@ We have several heuristics, each of them trying a different aproach.
 
 The second and third ones were the ones tried first but they both gave negative values so they had to be discarded.
 
-The first one is always grater than 1 and it is multiplied by 3, with the intention to exaggerate the heuristic value itself when its bad, 
+The first one is always greater than 1 and it is multiplied by 3, with the intention to increase the heuristic value itself when its bad, 
 making better boards have a much better (lower in this case since a heuristic is always minimised) score.
 
-**Regarding addmisibility**
+**Regarding admissibility**
 
 We can safely assume that this heuristic is admissible, since it only accounts for the remaining knights to be placed and does not 
-overestimate other complex calculations the algorithm might take. Also the problem being solved is simple enought to make such asumptions 
-since it's result is always determisintic regardless of the board size.
+overestimate other complex calculations the algorithm might do. Also the problem being solved is simple enought to make such asumptions 
+since its result is always deterministic regardless of the board's size.
 
 ## Results
 
 **B&B**
 
-| Board | Algorithm | Time    | Horses |
-|-------|-----------|---------|--------|
-| 2x2   | B&B       | 0.001   | 4      |
-| 3x3   | B&B       | 0.010   | 5      |
-| 3x5   | B&B       | 0.023   | 8      |
-| 5x5   | B&B       | 124.1   | 13     |
-| 8x8   | B&B       | >5min   | >5min  |
+| Board | Algorithm | Time  | Horses |
+|-------|-----------|-------|--------|
+| 2x2   | B&B       | 0.001 | 4      |
+| 3x3   | B&B       | 0.010 | 5      |
+| 3x5   | B&B       | 0.023 | 8      |
+| 5x5   | B&B       | 124.1 | 13     |
+| 8x8   | B&B       | >5min | >5min  |
 
-The cuantity of horses doesnt need any analysis since it's determined by the board so if we find a solution we know its going to have 
-the max amount of knights.
+The cuantity of horses doesn't need any analysis since it's determined by the board so if we find a solution we know its going to have 
+the maximum amount of knights.
 
-Three of the tables, the 2x2, 3x3 and 3x5 have similar times. This is before 5x5 comes into action, this iteration suddenly increases 
-the time substantially. This show how exponential the growth of ths algorithm is.
+Three of the tables, the 2x2, 3x3 and 3x5 have similar times. This is before 5x5 comes into action; this iteration suddenly increases 
+the time substantially. This show how exponential the growth of this algorithm is.
 We also observe that the 8x8 is not done by any means in a resonable time.
 
-The B&B algorithm is a great one for small simple problems or ones that have a very clear path (or some small amout of paths) with lower 
-costs. When it comes to bigger or more generic problems it is very slow a costly and not really recomended.
+The B&B algorithm is a great one for small simple problems or ones that have a very clear path (or some small amount of paths) with lower 
+costs. When it comes to bigger or more generic problems it is very slow, costly and not really recommended.
 
 **A\***
 
@@ -88,12 +88,12 @@ costs. When it comes to bigger or more generic problems it is very slow a costly
 
 Taking a first look at the table, we see that we have pretty good times for the algorithm.
 The last one that this algorithm is able to accomplish is the 5x5 taking only 0.145 seconds, so we can conclude that this algorithm 
-is satisfactorily fast and even if it still escalates very quickly looking at the long time 8x8 takes, we can see that the algorithm 
+is successfully fast and even if it still escalates very quickly looking at the long time 8x8 takes, we can see that the algorithm 
 greatly improves from the B&B thanks to the inclusion of the heuristic value.
 
-The A* algorithm is a much better and a bit more efficient one over B&B but it still struggles over complex or generic problems.
-The efficiency of A* is greatly dependant on the precision of the heuristic value and really suffers over a bad aproximation of said value,
-and adds the problem of proving it's addmisibility.
+The A* algorithm is a much better and a bit more efficient one over B&B, though it still struggles over complex and generic problems.
+The efficiency of A* is greatly dependant on the precision of the heuristic value and really suffers over a bad approximation of said value,
+and it adds the problem of proving its admissibility.
 
 **Conclusions**
 
@@ -111,9 +111,9 @@ more complex settings where the calculation of a heuristic is not as simple.
 
 **Authors**
 
-This project is an addaptation and improvement from a practical assignment at the Universidad Politecnica de Madrid on 2024 and made by 4 people 
-including myself:
-*   Wuillermo (Guillermo Vergara)
+This project is an addaptation and improvement from a practical assignment in the subject of Artificial Intelligence (Inteligencia Artificial) 
+at the Universidad Politecnica de Madrid (UPM) on 2024 made by 4 people including myself:
 *   [Jose Belchí](https://github.com/josebelchi)
+*   Wuillermo (Guillermo Vergara)
 *   [Alex](https://github.com/acorcobado)
 *   Marco
