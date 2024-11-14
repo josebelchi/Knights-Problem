@@ -114,6 +114,6 @@ more complex settings where the calculation of a heuristic is not as simple.
 This project is an addaptation and improvement from a practical assignment in the subject of Artificial Intelligence (Inteligencia Artificial) 
 at the Universidad Politecnica de Madrid (UPM) on 2024 made by 4 people including myself:
 *   [Jose Belchí](https://github.com/josebelchi)
-*   Wuillermo (Guillermo Vergara)
+*   [Guillermo Vergara](https://github.com/Wuillermo)
 *   [Alex](https://github.com/acorcobado)
 *   Marco
